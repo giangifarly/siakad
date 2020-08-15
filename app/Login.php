@@ -19,6 +19,10 @@ class Login extends Model
     {
         return $this->belongsTo('App\Siswa');
     }
+    public function admin()
+    {
+        return $this->belongsTo('App\Admin');
+    }
 
     public function editSiswa()
     {

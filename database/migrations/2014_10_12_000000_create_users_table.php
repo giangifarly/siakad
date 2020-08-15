@@ -13,6 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::create('admins', function (Blueprint $table) {
+            $table->id();
+            $table->string('jenis_kelamin',15);
+            $table->string('telepon',15);
+            $table->timestamps();
+        });
+
         Schema::create('siswa', function (Blueprint $table) {
             $table->id('id');
             $table->string('jenis_kelamin',11)->nullable();
@@ -41,10 +48,9 @@ class CreateUsersTable extends Migration
 
 
             $table->bigInteger('siswa_id')->unsigned()->nullable();
+            $table->bigInteger('admin_id')->unsigned()->nullable();
             $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
-
-            // $table->index('id_siswa');
-            // $table->foreign('id_siswa')->references('id_siswa')->on('siswa')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade')->onUpdate('cascade');
         });
 
 
@@ -59,5 +65,6 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('siswa');
+        Schema::dropIfExists('admin');
     }
 }

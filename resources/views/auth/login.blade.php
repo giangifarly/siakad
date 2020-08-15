@@ -23,7 +23,7 @@
         #map {
           top: 0;
           bottom: 0;
-          width: 100%;
+          width: 80%;
           height: 500px;
         }
     </style>
@@ -297,19 +297,18 @@
     <div class="site-section bg-light" id="location-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-7">
+				<div class="col-md-7 justify-text-center">
 
 					<div class="row mb-5 justify-content-center">
                         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
                             <h2 class="section-title">Lokasi Kami</h2>
                         </div>
                     </div>
-					<p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi</p>
 				</div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div id="map"></div>
+            <div class="row justify-content-center">
+                <div id="map"></div>
+            </div>
         </div>
     </div>
 
