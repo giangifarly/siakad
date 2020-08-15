@@ -30,4 +30,4 @@ Route::get('/admin/siswa_edit/{id}',    'HomeController@siswa_edit')->name('home
 Route::get('/admin/siswa_hapus/{id}',   'HomeController@siswa_hapus')->name('home');
 
 Route::post('/admin/tambah_siswa/proses',   'HomeController@siswa_add_proses')->name('home');
-Route::put('/admin/edit_siswa/proses/{id}',     'HomeController@siswa_edit_proses')->name('home');
+Route::put('/admin/edit_siswa/proses/{id}', 'HomeController@siswa_edit_proses')->name('home');

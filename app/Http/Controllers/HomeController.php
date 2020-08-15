@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Login;
 use App\Siswa;
+use App\Admin;
 use App\Http\Controllers\stdClass;
 
 class HomeController extends Controller
@@ -91,11 +92,14 @@ class HomeController extends Controller
 
         return redirect('/admin/siswa');
     }
+
     public function siswa()
     {
-        $siswa = Login::with('siswa')->get();
+
+        $siswa = Login::with('siswa')->where('admin_id',null)->get();
         return view('siswa', ['siswa' => $siswa]);
     }
+
     public function siswa_hapus($id)
     {
         $login = Login::find($id);
