@@ -20,6 +20,19 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('program', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama_program');
+        });
+
+        Schema::create('sekolah', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama_sekolah');
+            $table->string('telp_sekolah');
+            $table->string('email_sekolah');
+            $table->text('alamat_sekolah');
+        });
+
         Schema::create('siswa', function (Blueprint $table) {
             $table->id('id');
             $table->string('jenis_kelamin',11)->nullable();
